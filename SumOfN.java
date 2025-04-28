@@ -11,5 +11,6 @@ public class SumOfN {
         SumOfN s  = new SumOfN();
 
         System.out.println(s.sum(100));
+        System.out.println("Hello");
     }
 }
