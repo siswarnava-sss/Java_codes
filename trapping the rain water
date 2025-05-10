@@ -1,0 +1,30 @@
+class Solution {
+    public int trap(int[] height) {
+
+        int[] mal = new int[height.length];
+        int[] mar = new int[height.length];
+        int sum = 0;
+        mal[0] = height[0];
+
+        for(int i = 1 ; i< mal.length -1 ; i++){
+            mal[i] = Math.max(mal[i-1],height[i]);
+        }
+        mar[mar.length -1] = height[height.length -1];
+        for(int j = mar.length -2 ; j>=0;j--){
+            mar[j] = Math.max(mar[j+1],height[j]);
+        }
+        
+        int[] water = new int[height.length];
+        for(int i = 1; i<height.length -1 ;i++){
+
+            sum += Math.min(mar[i] , mal[i]) - height[i];
+
+        }
+
+
+        
+        
+
+        return sum;
+    }
+}
